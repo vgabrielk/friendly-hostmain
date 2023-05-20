@@ -29,6 +29,7 @@ body{
     justify-content: space-around;
     padding: 40px 30px;
     gap: 6rem;
+
 }
 .container .login-form .tittle{
     position: relative;
@@ -112,5 +113,39 @@ body{
 @media (max-width:800px) {
     .login-img{
         display: none;
+    }
+}
+
+.modal {
+    position: fixed;
+    height: 500px;
+    width: 70%;
+    box-shadow: 1px 1px 12px black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0052F4;
+    padding: 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+span {
+    cursor: pointer;
+    color: #0052F4;
+    font-weight: bold;
+}
+
+.modal a {
+    text-decoration: none;
+    color: #fff!important;
+    font-size: 24px;
+}
+
+@media(max-width : 600px) {
+    .modal {
+        width: 90%;
     }
 }

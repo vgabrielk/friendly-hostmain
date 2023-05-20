@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.css'
+import { Link } from 'react-router-dom'
 
 const RegisterAnfitriao = () => {
   return (
@@ -53,8 +54,9 @@ const RegisterAnfitriao = () => {
                     <i className="fa fa-github"></i>
                 </div>
                 <div className="sigup-text">
+           <Link to="/login">
             Fazer login
-
+                    </Link>
                 </div>
             </form>
 

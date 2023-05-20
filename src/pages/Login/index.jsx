@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
 import './style.css'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
+
+    const [showModal, setShowModal] = useState(false)
+
+
   return (
 
     <div className="container">
@@ -28,11 +33,25 @@ const Login = () => {
                     <i className="fa fa-github"></i>
                 </div>
                 <div className="sigup-text">
-            Não possui uma conta? <a href="#">Crie uma agora</a>
+            Não possui uma conta? 
+            <span onClick={ () => setShowModal(!showModal)}>
+            Crie agora
+            </span>
 
                 </div>
             </form>
-
+            {showModal && (
+                <div className='modal'>
+                    <Link to="/register/aluno">
+                        Aluno
+                    </Link>
+                    <p>ou</p>
+                    <Link to="/register/anfitriao">
+                        Anfitrião
+                    </Link>
+    
+                </div>
+                )}
         </div>
         <div className="login-img">
             <img src="/assets/friendly.svg" width="100%" />
