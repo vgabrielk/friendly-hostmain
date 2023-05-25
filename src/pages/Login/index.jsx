@@ -42,14 +42,29 @@ const Login = () => {
             </form>
             {showModal && (
                 <div className='modal'>
-                    <Link to="/register/aluno">
+                <div className="card">
+                    
+                    <img className='background' src="/assets/background-select.png" alt="" />
+                    <img className='img-background' src="/assets/icon-background.svg" alt="" />
+                    <div className="card-title">
+                        <h1>Selecione o tipo de conta</h1>
+                    </div>
+
+                    <Link className='a-link' to="/register/aluno">
+                    <button className='btn'>
                         Aluno
+                    </button>
                     </Link>
-                    <p>ou</p>
-                    <Link to="/register/anfitriao">
+
+                    <Link className='a-link' to="/register/anfitriao">
+                    <button className='btn'>
                         Anfitrião
+                    </button>
                     </Link>
-    
+                    
+                    
+
+                </div>    
                 </div>
                 )}
         </div>
