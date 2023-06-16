@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
-import './style.css'
 import { Link } from 'react-router-dom'
+import "./style.css"
 
 const Login = () => {
 
@@ -25,12 +25,6 @@ const Login = () => {
                 <div className="forgot"> <a href="#">Esqueceu a senha?</a> </div>
                 <div className="input-box">
                     <input type="submit" value="Entrar" />
-                </div>
-                <div className="divider"> ou </div>
-                <div className="medias-sociais">
-                    <i className="fa fa-facebook"></i>
-                    <i className="fa fa-instagram"></i>
-                    <i className="fa fa-github"></i>
                 </div>
                 <div className="sigup-text">
             Não possui uma conta? 

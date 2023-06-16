@@ -1,12 +1,12 @@
 import React from 'react'
-import './style.css'
 import { Link } from 'react-router-dom'
+import "../../index.css"
 
 const RegisterAluno = () => {
   return (
 
     <div className="container">
-        <div className="login-form">
+        <div className="register-form">
             <div className="tittle">Registrar aluno</div>
             <form action="#">
 
@@ -30,7 +30,10 @@ const RegisterAluno = () => {
                     <i className="fa fa-envelope"></i>
                     <input type="date" placeholder="Data de nascimento" required/>
                 </div>
-
+                <div className="input-box">
+                    <i className="fa fa1-lock"></i>
+                    <input type="phone" placeholder="Insira seu telefone" required/>
+                </div>
                 <div className="input-box">
                     <i className="fa fa1-lock"></i>
                     <input type="password" placeholder="Digite sua senha" required/>
@@ -39,28 +42,10 @@ const RegisterAluno = () => {
                     <i className="fa fa1-lock"></i>
                     <input type="password" placeholder="Confirme sua senha" required/>
                 </div>
-                <div className="input-box">
-                    <i className="fa fa1-lock"></i>
-                    <input type="phone" placeholder="Insira seu telefone" required/>
-                </div>
-                <div className="forgot"> <a href="#">Esqueceu a senha?</a> </div>
-                <div className="input-box">
+            </form>
+                <div className="submit-box">
                     <input type="submit" value="Registrar" />
                 </div>
-                <div className="divider"> ou </div>
-                <div className="medias-sociais">
-                    <i className="fa fa-facebook"></i>
-                    <i className="fa fa-instagram"></i>
-                    <i className="fa fa-github"></i>
-                </div>
-                <div className="sigup-text">
-                    <Link to="/login">
-            Fazer login
-                    </Link>
-
-                </div>
-            </form>
-
         </div>
        
             </div>

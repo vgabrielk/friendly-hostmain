@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --default-color: #0052F4;
+}  
+::selection{
+    background-color: var(--default-color);
+    color: white;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--default-color);
+    padding: 40px;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 36%, rgba(0,52,255,1) 100%);
+}
+.container{
+    width: 58vw;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px 30px;
+    gap: 6rem;
+}
+.register-form form{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    gap: 15px;
+}
+.container .register-form .tittle{
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+.container .register-form .tittle::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 25px;
+    background-color: var(--default-color);
+}
+.container .register-form .input-box{
+    height: 50px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+.container .register-form .input-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+.container .register-form .input-box .input:focus,
+.container .register-form .input-box input:valid{
+    border-color: var(--default-color);
+}
+.container .submit-box input[type="submit"]{
+    background-color: var(--default-color);
+    width: 100%;
+    border: 0;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 0;
+    margin-top: 2%;
+}
+.container .register-form .input-box i{
+    position: absolute;
+    color: var(--default-color);
+    font-size: 17px;
+}
+
+.container .register-form .forgot a{
+    color: var(--default-color);
+    text-decoration: none;
+}
+.container .register-form .divider{
+    text-align: center;
+    margin: 10px;
+    font-size: 18px;
+}
+.container .register-form .medias-sociais{
+    text-align: center;
+}
+.container .register-form .medias-sociais i{
+    margin: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.container .register-form .medias-sociais i:hover{
+    color: var(--default-color);
+}
+.container .register-form .sigup-text a{
+    color: var(--default-color);
+    text-decoration: none;
+}  
+.container .login-img{
+    width: 50%; 
+
+}
+@media (max-width:900px) {
+    .login-img{
+        display: none;
+    }
+
+    .register-form form {
+        grid-template-columns: 100%;
+    }
+
+    .container {
+        width: auto;
+    }
+}
+
