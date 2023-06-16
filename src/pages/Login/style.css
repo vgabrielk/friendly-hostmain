@@ -107,11 +107,76 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 36%, rgba(
     text-decoration: none;
 }  
 .container .login-img{
-    width: 50%; 
-
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
+.container .login-img .content-text{
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    margin: 10px;
+}
+
+.container .login-img .iconFriendly{
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+}
+.container .login-img .content-text button{
+    background-color: var(--default-color);
+    border: 0;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
 @media (max-width:800px) {
     .login-img{
         display: none;
     }
+}
+
+.container .login-form span{
+    color: #0d1be2;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 5px;
+    display: block;
+    cursor: pointer;
+}
+.inputLembrar{
+    display: flex;
+    gap: 6px;
+}
+
+.inputLembrar .forgot{
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.inputLembrar input{
+    width: 20px;
+    height: 30px;
+    cursor: pointer;
+}
+.input-box img{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
 }

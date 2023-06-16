@@ -1,6 +1,10 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./style.css"
+import imgEmail from "/assets/email.png"
+import imgLock from "/assets/senha-icon.png"
+import imgBackground from "/assets/background-select.png"
+import iconFriendly from "/assets/friendly.svg"
 
 const Login = () => {
 
@@ -11,26 +15,33 @@ const Login = () => {
 
     <div className="container">
         <div className="login-form">
-            <div className="tittle">Login</div>
+            <div className="tittle">Faça Seu Login</div>
             <form action="#">
 
                 <div className="input-box">
                     <i className="fa fa-envelope"></i>
-                    <input type="text" placeholder="Digite seu email" required/>                </div>
+                    <input type="text" placeholder="Digite seu email" required/> 
+                    <img src={imgEmail} alt="" />            
+                </div>
 
                 <div className="input-box">
                     <i className="fa fa-lock"></i>
                     <input type="password" placeholder="Digite sua senha" required/>
+                    <img src={imgLock} alt="" />
                 </div>
+                <div className='inputLembrar'>
                 <div className="forgot"> <a href="#">Esqueceu a senha?</a> </div>
+                <input  type="checkbox" id='lembrarDmim' name='lembrar' />
+                <label  htmlFor="lembrarDmim">Lembrar De Mim</label>
+                </div>
                 <div className="input-box">
                     <input type="submit" value="Entrar" />
                 </div>
                 <div className="sigup-text">
             Não possui uma conta? 
-            <span onClick={ () => setShowModal(!showModal)}>
+            {/* <span onClick={ () => setShowModal(!showModal)}>
             Crie agora
-            </span>
+            </span> */}
 
                 </div>
             </form>
@@ -61,10 +72,16 @@ const Login = () => {
                 </div>    
                 </div>
                 )}
-        </div>
+    </div>
         <div className="login-img">
-            <img src="/assets/friendly.svg" width="100%" />
+            <img className='iconFriendly' src={iconFriendly} alt="" />
+            <img src={imgBackground} width="100%" />
+            <div className='content-text'>
+                <h1>Seja Bem Vindo</h1>
+                <p>INSIRA SEUS DADOS E REALIZE O SEU CADASTRO</p>
+            <button onClick={ () => setShowModal(!showModal)}>REGISTRE-SE</button>
             </div>
-            </div>
+        </div>
+    </div>
 )   }
 export default Login
