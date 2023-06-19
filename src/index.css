@@ -35,7 +35,9 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 36%, rgba(
 .register-form form{
     display: grid;
     width: 100%;
-    grid-template-columns: 50% 50%;
+    height: 60vh;
+    overflow: auto;
+    grid-template-columns: 45% 45%;
     gap: 15px;
 }
 .container .register-form .tittle{
