@@ -1,13 +1,12 @@
 
-import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import "../../index.css"
 import api from '../../services/api'
 
 const RegisterAluno = () => {
-   const [payload, setPayLoad] = useState({
-    nome: "",
-        dataNascimento: "",
+    const [payload, setPayload] = useState({
+        nome: "",
+        dataNascimento: "2000-01-01",
         email: "",
         telefone: "",
         cep: "",
@@ -19,114 +18,108 @@ const RegisterAluno = () => {
         estado: "",
         nacionalidade: "",
         responsavel: "",
-        cpf : "",
-        senha : "",
+        cpf: "",
+        senha: "",
         urlComprovanteMatri: ""
-   })
-    async function RegistreSe(){
-       const res = await api.post("/alunos/cadastrar",{
-        nome: "nicolau mil grau",
-        dataNascimento: "2003-01-01",
-        email: "nicolas.stevan@email.com",
-        telefone: "(11) 1234-5678",
-        cep: "12345-696",
-        logradouro: "Rua A",
-        numero: 10,
-        complemento: "Apt. 123",
-        bairro: "Centro",
-        cidade: "São Paulo",
-        estado: "SP",
-        nacionalidade: "Brasileira",
-        responsavel: "Maria da Silva",
-        cpf : "10316333422",
-        senha : "12345669",
-        urlComprovanteMatri: "http://url.comprovante.com"
-       })
+    })
+    const handleInputChange = (event) => {
+        setPayload({
+            ...payload,
+            [event.target.name]: event.target.value
+        })
+    }
 
-       console.log(res)
+    async function RegistreSe(e) {
+        e.preventDefault()
+        const res = await api.post("/alunos/cadastrar", payload)
+
+        console.log(res)
     }
     return (
 
-    <div className="container">
-        <div className="register-form">
-            <div className="tittle">Registrar aluno</div>
-            <form>
-                
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="text" placeholder="Nome completo" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="number" placeholder="CPF" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="text" placeholder="Matrícula" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="email" placeholder="E-mail" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="date" placeholder="Data de nascimento" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa1-lock"></i>
-                    <input type="phone" placeholder="Insira seu telefone" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa1-lock"></i>
-                    <input type="password" placeholder="Digite sua senha" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa1-lock"></i>
-                    <input type="password" placeholder="Confirme sua senha" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="number" placeholder="cep" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="text" placeholder="logradouro" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="number" placeholder="numero" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="text" placeholder="complemento" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="text" placeholder="bairro" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="text" placeholder="cidade" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="text" placeholder="estado" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="text" placeholder="nacionalidade" required/>
-                </div>
-                <div className="input-box">
-                    <i className="fa fa-envelope"></i>
-                    <input type="text" placeholder="responsavel" required/>
-                </div>
-            </form>
-                <div className="submit-box">
-                    <input type="submit" value="Registrar" />
-                </div>
-        </div>
+        <div className="container">
+            <div className="register-form">
+                <div className="tittle">Registrar aluno</div>
+                <form onSubmit={RegistreSe}>
 
-            
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="nome" type="text" placeholder="Nome completo" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="cpf" type="number" placeholder="CPF" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="urlComprovanteMatri" type="text" placeholder="Matrícula" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="email" type="email" placeholder="E-mail" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="dataNascimento" type="date" placeholder="Data de nascimento"  />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa1-lock"></i>
+                        <input onChange={handleInputChange} name="telefone" type="phone" placeholder="Insira seu telefone" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa1-lock"></i>
+                        <input onChange={handleInputChange} name="senha" type="password" placeholder="Digite sua senha" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa1-lock"></i>
+                        <input onChange={handleInputChange} name="" type="password" placeholder="Confirme sua senha" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="cep" type="number" placeholder="Cep" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="logradouro" type="text" placeholder="Logradouro" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="numero" type="number" placeholder="Numero" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="complemento" type="text" placeholder="Complemento" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="bairro" type="text" placeholder="Bairro" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="cidade" type="text" placeholder="Cidade" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="estado" type="text" placeholder="Estado" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="nacionalidade" type="text" placeholder="Nacionalidade" required />
+                    </div>
+                    <div className="input-box">
+                        <i className="fa fa-envelope"></i>
+                        <input onChange={handleInputChange} name="responsavel" type="text" placeholder="Responsavel" required />
+                    </div>
+                    <div className="submit-box">
+                        <input type="submit" value="Registrar" />
+                    </div>
+
+                </form>
+
             </div>
-)   }
+
+
+        </div>
+    )
+}
 export default RegisterAluno
