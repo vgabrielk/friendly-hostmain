@@ -35,7 +35,9 @@ const Login = () => {
                         <label htmlFor="lembrarDmim">Lembrar De Mim</label>
                     </div>
                     <div className="input-box">
+                        <Link className='a-link' to="/home">
                         <input type="submit" value="Entrar" />
+                        </Link>
                     </div>
                     <div className="sigup-text">
                         Não possui uma conta?
@@ -56,18 +58,20 @@ const Login = () => {
                             <div className="card-title">
                                 <h1>Selecione o tipo de conta</h1>
                             </div>
-
+                            <div className="buttons">
                             <Link className='a-link' to="/register/aluno">
                                 <button className='btn'>
                                     Aluno
                                 </button>
                             </Link>
+                            
 
                             <Link className='a-link' to="/register/anfitriao">
                                 <button className='btn'>
                                     Anfitrião
                                 </button>
                             </Link>
+                            </div>
                         </div>
                     </div>
                 )}
